@@ -1,0 +1,27 @@
+.registration {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.registration__input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.registration__btn {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.registration__btn:hover {
+    background-color: #0056b3;
+}

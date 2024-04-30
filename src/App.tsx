@@ -1,14 +1,13 @@
+import { Registration } from "./components/Registration";
+
 export const App = () => {
   return (
     <div className="container">
-      <header>
-        <div className="logo" />
-        <h1>Webová aplikace</h1>
-      </header>
       <main>
-        <p>
-          Startovací šablona pro webovou aplikaci v Reactu.
-        </p>
+        <h1 className="title">
+          Registration
+        </h1>
+        <Registration />
       </main>
     </div>
   );
