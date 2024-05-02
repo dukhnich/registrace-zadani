@@ -45,10 +45,17 @@ export const Registration: React.FC = () => {
     console.log(user);
   };
   const changeField = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUser({
+    const updated = {
       ...user,
       [e.target.name]: e.target.value,
-    });
+    };
+    if (e.target.name === "email" && !updated.username) {
+      const index = e.target.value.indexOf("@");
+      if (index !== -1) {
+        updated.username = e.target.value.slice(0, index);
+      }
+    }
+    setUser(updated);
   };
   return (
     <form onSubmit={onSubmit} className="registration">

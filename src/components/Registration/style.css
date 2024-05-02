@@ -1,27 +1,36 @@
 .registration {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .registration__input {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: 16px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #4e6376;
+  color: #ffffff;
 }
 
 .registration__btn {
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  background-color: #4e6376;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  width: 150px;
+  margin: auto;
 }
 
 .registration__btn:hover {
-    background-color: #0056b3;
+  background-color: #384856;
 }
