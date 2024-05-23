@@ -1,7 +1,7 @@
 import "./style.css";
 import { useState } from "react";
 
-export interface RegistrationData {
+interface RegistrationData {
   username: string;
   email: string;
   password: string;
@@ -12,8 +12,32 @@ type inputsNames = "username" | "email" | "password" | "passwordConfirm";
 
 interface inputData {
   type: inputsNames;
+  inputType: string;
   label: string;
 }
+
+const inputsArr: inputData[] = [
+  {
+    type: "email",
+    inputType: "email",
+    label: "Email Address",
+  },
+  {
+    type: "username",
+    inputType: "text",
+    label: "User Name",
+  },
+  {
+    type: "password",
+    inputType: "password",
+    label: "Password",
+  },
+  {
+    type: "passwordConfirm",
+    inputType: "password",
+    label: "Confirm Password",
+  },
+];
 
 export const Registration: React.FC = () => {
   const [user, setUser] = useState<RegistrationData>({
@@ -22,24 +46,7 @@ export const Registration: React.FC = () => {
     password: "",
     passwordConfirm: "",
   });
-  const inputsArr: inputData[] = [
-    {
-      type: "email",
-      label: "Email Address",
-    },
-    {
-      type: "username",
-      label: "User Name",
-    },
-    {
-      type: "password",
-      label: "Password",
-    },
-    {
-      type: "passwordConfirm",
-      label: "Confirm Password",
-    },
-  ];
+
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     console.log(user);
@@ -62,7 +69,7 @@ export const Registration: React.FC = () => {
       {inputsArr.map((input) => (
         <input
           key={input.type}
-          type="text"
+          type={input.inputType}
           className={`registration__input registration__input--${input.type}`}
           name={input.type}
           value={user[input.type]}
